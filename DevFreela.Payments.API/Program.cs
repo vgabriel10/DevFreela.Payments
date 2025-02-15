@@ -1,4 +1,5 @@
 
+using DevFreela.Payments.API.Consumers;
 using DevFreela.Payments.API.Services;
 using DevFreela.Payments.API.Services.Interfaces;
 
@@ -13,6 +14,7 @@ namespace DevFreela.Payments.API
             // Add services to the container.
 
             builder.Services.AddScoped<IPayamentService, PayamentService>();
+            builder.Services.AddHostedService<ProcessPaymentConsumer>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
